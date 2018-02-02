@@ -22,7 +22,7 @@ module.exports = function(app, db){
     });
 
     //R=Read
-    app.get('/notes/:id', (req, res) => {
+    app.get('/notes/:id', cors(), (req, res) => {
         
         const myDB = db.db('notesdb');
 
