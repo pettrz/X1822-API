@@ -1,4 +1,5 @@
 var objectId = require('mongodb').ObjectId;
+var cors = require('cors');
 
 module.exports = function(app, db){
 
@@ -42,7 +43,7 @@ module.exports = function(app, db){
     });
 
     //U=Update
-    app.put('/notes/:id', (req, res) => {
+    app.put('/notes/:id', cors(), (req, res) => {
 
         const myDB = db.db('notesdb');
 
